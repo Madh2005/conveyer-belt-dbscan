@@ -1,4 +1,4 @@
-# SIH26008 – DBSCAN Anomaly Clustering for Conveyor Belt Joint Rupture Prediction
+DBSCAN Anomaly Clustering for Conveyor Belt Joint Rupture Prediction
 
 ## Project layout
 ```
