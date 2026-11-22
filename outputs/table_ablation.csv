@@ -1,0 +1,3 @@
+variant,n_inc,n_det,lead_mean,lead_std,fa_mean,fa_std,alerts,runs,det_rate
+Raw readings only,40,40,22.12,3.246,0.0,0.0,4.2,10,1.0
+Raw + rolling (proposed),40,40,18.03,1.923,0.5,0.85,4.6,10,1.0

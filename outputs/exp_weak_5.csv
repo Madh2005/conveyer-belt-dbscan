@@ -1,0 +1,26 @@
+seed,method,det,lead,fa,alerts,n_inc,n_det
+5,DBSCAN (proposed),0.0,,0,0,4,0
+5,Isolation Forest,0.75,5.7,0,3,4,3
+5,LOF,0.25,11.5,0,1,4,1
+5,k-means distance,0.25,7.7,0,1,4,1
+5,Fixed threshold (|z|>3.5),0.25,7.7,0,1,4,1
+6,DBSCAN (proposed),0.25,3.5,2,3,4,1
+6,Isolation Forest,0.5,21.8,2,5,4,2
+6,LOF,0.5,9.5,0,2,4,2
+6,k-means distance,0.5,5.2,2,4,4,2
+6,Fixed threshold (|z|>3.5),0.25,5.5,0,1,4,1
+7,DBSCAN (proposed),0.5,5.2,0,2,4,2
+7,Isolation Forest,0.5,7.8,0,2,4,2
+7,LOF,0.75,9.3,0,3,4,3
+7,k-means distance,0.5,7.6,0,2,4,2
+7,Fixed threshold (|z|>3.5),0.5,7.6,0,2,4,2
+8,DBSCAN (proposed),0.5,5.8,0,2,4,2
+8,Isolation Forest,0.75,8.1,0,3,4,3
+8,LOF,0.0,,0,0,4,0
+8,k-means distance,0.75,8.8,0,3,4,3
+8,Fixed threshold (|z|>3.5),0.25,7.7,0,1,4,1
+9,DBSCAN (proposed),0.25,29.7,0,2,4,1
+9,Isolation Forest,0.75,17.9,0,4,4,3
+9,LOF,0.25,4.8,0,1,4,1
+9,k-means distance,0.5,22.2,0,3,4,2
+9,Fixed threshold (|z|>3.5),0.25,5.5,0,1,4,1

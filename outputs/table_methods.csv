@@ -1,0 +1,6 @@
+method,n_inc,n_det,lead_mean,lead_std,fa_mean,fa_std,alerts,runs,det_rate
+DBSCAN (proposed),40,40,18.03,1.923,0.5,0.85,4.6,10,1.0
+Isolation Forest,40,40,19.22,2.06,0.5,0.85,5.3,10,1.0
+LOF,40,28,25.37,3.103,0.3,0.483,3.5,10,0.7
+k-means distance,40,40,23.25,3.366,1.2,1.398,9.0,10,1.0
+Fixed threshold (|z|>3.5),40,40,17.17,2.105,0.0,0.0,4.0,10,1.0
