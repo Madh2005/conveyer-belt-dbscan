@@ -44,36 +44,6 @@ conveyor_dbscan/
 Sample result on the synthetic data: 4/4 ruptures detected, ~17 h mean lead time, 1 false alarm.
 (Point-level recall is lower by design: the 48 h window includes hours before the degradation has started.)
 
-## How to make changes
-| I want to… | Do this |
-|---|---|
-| Use **real data** | Replace the two CSVs in `data/` (same column names). Run `python run_pipeline.py` (no `--generate`). Change `SENSOR_COLS` in `config.py` to add sensors. |
-| More/fewer anomalies flagged | `python run_pipeline.py --eps 1.0` (lower = more flags) or change `EPS_SCALE` in `config.py` |
-| Change density requirement | `--min-samples 30` or `MIN_SAMPLES` (keep >= 2 × features) |
-| Change sampling rate | Adjust `ROLL_WINDOW` (samples per hour) and `SAMPLE_FREQ` |
-| Fewer false alarms / earlier warnings | Raise `MIN_ALERT_POINTS` (fewer false alarms) or lower it (earlier alerts) |
-| Change validation window | `--lookback-hours 72` or `LOOKBACK_HOURS` |
-| New features (e.g. FFT, rate of change) | Edit `build_features()` in `run_pipeline.py` |
-| Different data scale (more joints/days) | `N_JOINTS`, `N_DAYS` in `config.py`, then `--generate` |
-
-## Tips
-- Tune `eps` by looking at `k_distance.png`: pick the "elbow".
-- For a live system, run the pipeline on a rolling window of recent data and push `alerts.csv` to a dashboard/SMS.
-- Add a Streamlit dashboard on top of `labeled_readings.csv` as an extension.
-
-## Reproducing the IEEE report results
-```
-python run_pipeline.py --generate          # single-run walkthrough (seed 42) -> outputs/
-python experiments.py 0 4                  # multi-seed benchmark in chunks (each call < 5 min)
-python experiments.py 4 8
-python experiments.py 8 10
-python aggregate_experiments.py            # -> outputs/table_methods.csv, table_ablation.csv, table_sensitivity.csv
-python experiments_weak.py 0 5             # weak-precursor stress test (precursor x0.3)
-python experiments_weak.py 5 10
-python make_report_figures.py              # -> report_figs/*.png used in the report
-```
-Set `PRECURSOR_SCALE` in `config.py` to change precursor strength. Replace the CSVs in `data/` with real plant data
-and re-run `run_pipeline.py` to validate on real incidents.
 
 ## Frontend (web dashboard)
 ```
